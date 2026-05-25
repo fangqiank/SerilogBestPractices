@@ -16,17 +16,17 @@ namespace SerilogBestPractices.Features.Orders
             await Task.Delay(100, cancellationToken); // Simulate some work
 
             if (request.Amount <= 0)
-                throw new InvalidOperationException("Order amount must be greater than zero");
+                throw new ArgumentException("Order amount must be greater than zero");
 
             if (request.CustomerName.Contains("duplicate", StringComparison.OrdinalIgnoreCase))
-                throw new InvalidOperationException("Duplicate order detected for this customer");
+                throw new ArgumentException("Duplicate order detected for this customer");
 
             var order = new Order
             {
                 Id = Guid.NewGuid(),
                 CustomerName = request.CustomerName,
                 Amount = request.Amount,
-                CreatedAt = DateTime.UtcNow
+                CreatedAt = DateTimeOffset.UtcNow
             };
 
             logger.LogInformation("Order {OrderId} created successfully", order.Id);

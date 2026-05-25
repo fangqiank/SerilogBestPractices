@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using SerilogBestPractices.Models;
 
 namespace SerilogBestPractices.Features.Orders
@@ -15,12 +15,13 @@ namespace SerilogBestPractices.Features.Orders
 
             await Task.Delay(50, cancellationToken);
 
+            // Demo: 返回模拟数据，实际项目应从数据库查询
             var order = new Order
             {
                 Id = request.OrderId,
                 CustomerName = "John Doe",
                 Amount = 99.99m,
-                CreatedAt = DateTime.UtcNow.AddDays(-1)
+                CreatedAt = DateTimeOffset.UtcNow.AddDays(-1)
             };
 
             logger.LogInformation("Order {OrderId} retrieved successfully", request.OrderId);

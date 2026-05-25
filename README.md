@@ -17,7 +17,7 @@ ASP.NET Core 10 示例项目，演示 Serilog 结构化日志的最佳实践，�
 ## Architecture / 架构
 
 ```
-HTTP Client
+HTTP Client (X-Correlation-Id Header)
     │
     ▼
 CorrelationIdMiddleware ──→ LogContext.PushProperty("CorrelationId")
@@ -27,9 +27,9 @@ SerilogRequestLogging ──→ HTTP {Method} {Path} {Status} {Elapsed}
     │
     ▼
 OrdersController ──→ IMediator.Send(command/query)
-    │
+    │                  ArgumentException → 400 BadRequest
     ▼
-LoggingBehavior<,> ──→ 自动记录请求名、耗时、异常
+LoggingBehavior<,> ──→ Stopwatch (try/finally) 自动记录耗时、异常
     │
     ▼
 CQRS Handlers ──→ ILogger<T> 结构化日志
@@ -42,12 +42,12 @@ Serilog ──→ Console Sink / Seq Sink (Docker)
 
 | 模块 | 文件 | 职责 |
 |------|------|------|
-| CorrelationIdMiddleware | `Middleware/CorrelationIdMiddleware.cs` | 将 CorrelationId 推入 LogContext，写入响应头 `X-Correlation-Id` |
-| LoggingBehavior | `Behaviors/LoggingBehavior.cs` | MediatR Pipeline Behavior，自动记录请求名称、耗时和异常 |
-| OrdersController | `Controllers/OrdersController.cs` | 订单 API 控制器，委托 MediatR 处理 |
-| CreateOrderHandler | `Features/Orders/CreateOrder.cs` | 创建订单 Command Handler |
+| CorrelationIdMiddleware | `Middleware/CorrelationIdMiddleware.cs` | 优先读取客户端 X-Correlation-Id 请求头，推入 LogContext，写入响应头 |
+| LoggingBehavior | `Behaviors/LoggingBehavior.cs` | MediatR Pipeline Behavior，try/finally + Stopwatch 自动记录请求名称、耗时和异常 |
+| OrdersController | `Controllers/OrdersController.cs` | 订单 API 控制器，委托 MediatR 处理，ArgumentException 返回 400 |
+| CreateOrderHandler | `Features/Orders/CreateOrder.cs` | 创建订单 Command Handler，ArgumentException 验证 |
 | GetOrderHandler | `Features/Orders/GetOrder.cs` | 查询订单 Query Handler |
-| Order | `Models/Order.cs` | 订单领域模型 |
+| Order | `Models/Order.cs` | 订单领域模型，DateTimeOffset 时区安全 |
 
 ## Quick Start
 
@@ -99,8 +99,9 @@ curl http://localhost:5018/api/orders/{id}
 
 ## Best Practices Summary
 
-1. **appsettings.json 配置 Serilog** — 环境分级，Development 用 Debug + Seq，Production 用 Warning + Console
-2. **CorrelationId 全链路追踪** — `LogContext.PushProperty` 贯穿整个请求生命周期
-3. **MediatR LoggingBehavior** — 自动记录请求名称、耗时、异常，零侵入业务代码
-4. **SerilogRequestLogging** — HTTP 请求自动日志，`EnrichDiagnosticContext` 注入上下文
-5. **结构化日志模板** — 使用 `{CustomerName}` 命名占位符，非字符串插值
+1. **appsettings.json 配置 Serilog** — 环境分级，Enrich 节自包含，零代码冗余
+2. **CorrelationId 全链路追踪** — 支持客户端 X-Correlation-Id 请求头传入
+3. **MediatR LoggingBehavior** — try/finally + Stopwatch 自动记录
+4. **SerilogRequestLogging** — HTTP 请求自动日志，EnrichDiagnosticContext 注入上下文
+5. **结构化日志模板** — `{CustomerName}` 命名占位符，DateTimeOffset 时区安全
+6. **验证异常结构化响应** — ArgumentException → 400 BadRequest，非 500

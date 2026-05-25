@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using Serilog.Context;
 using System.Diagnostics;
 
@@ -24,7 +24,6 @@ namespace SerilogBestPractices.Behaviors
             try
             {
                 var response = await next();
-                stopwatch.Stop();
 
                 logger.LogInformation(
                     "Processed {RequestName} in {ElapsedMilliseconds} ms",
@@ -35,8 +34,6 @@ namespace SerilogBestPractices.Behaviors
             }
             catch (Exception ex)
             {
-                stopwatch.Stop();
-
                 using (LogContext.PushProperty("Error", ex, destructureObjects: true))
                 {
                     logger.LogError(
@@ -47,6 +44,10 @@ namespace SerilogBestPractices.Behaviors
                 }
 
                 throw;
+            }
+            finally
+            {
+                stopwatch.Stop();
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿using Serilog.Context;
+using Serilog.Context;
 
 namespace SerilogBestPractices.Middleware
 {
@@ -6,17 +6,20 @@ namespace SerilogBestPractices.Middleware
         RequestDelegate next
         )
     {
+        private const string CorrelationIdHeader = "X-Correlation-Id";
+
         public async Task InvokeAsync(HttpContext context)
         {
-            // 从 HttpContext.TraceIdentifier 获取关联 ID
-            var correlationId = context.TraceIdentifier;
+            // 优先使用客户端传入的 CorrelationId，否则回退到 TraceIdentifier
+            var correlationId = context.Request.Headers.TryGetValue(CorrelationIdHeader, out var headerValue)
+                ? headerValue.ToString()
+                : context.TraceIdentifier;
 
-            // 将 CorrelationId 推入 LogContext，在整个请求生命周期内可用
             using (LogContext.PushProperty("CorrelationId", correlationId))
             {
                 context.Response.OnStarting(() =>
                 {
-                    context.Response.Headers["X-Correlation-Id"] = correlationId;
+                    context.Response.Headers[CorrelationIdHeader] = correlationId;
                     return Task.CompletedTask;
                 });
 

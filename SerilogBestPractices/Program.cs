@@ -10,10 +10,7 @@ builder.Host.UseSerilog((context, services, configuration) =>
 {
     configuration
         .ReadFrom.Configuration(context.Configuration)
-        .ReadFrom.Services(services)
-        .Enrich.FromLogContext()      
-        .Enrich.WithMachineName()     
-        .Enrich.WithThreadId();       
+        .ReadFrom.Services(services);
 });
 
 // 添加 MediatR

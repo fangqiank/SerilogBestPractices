@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SerilogBestPractices.Features.Orders;
 using SerilogBestPractices.Models;
@@ -8,7 +8,7 @@ namespace SerilogBestPractices.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class OrdersController(
-        IMediator mediator, 
+        IMediator mediator,
         ILogger<OrdersController> logger
         ) : ControllerBase
     {
@@ -20,9 +20,16 @@ namespace SerilogBestPractices.Controllers
                 request.CustomerName);
 
             var command = new CreateOrderCommand(request.CustomerName, request.Amount);
-            var order = await mediator.Send(command);
 
-            return CreatedAtAction(nameof(GetOrder), new { id = order.Id }, order);
+            try
+            {
+                var order = await mediator.Send(command);
+                return CreatedAtAction(nameof(GetOrder), new { id = order.Id }, order);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { error = ex.Message });
+            }
         }
 
         [HttpGet("{id}")]
