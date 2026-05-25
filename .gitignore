@@ -1,0 +1,16 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+*.cache
+
+## Visual Studio
+.vs/
+
+## Claude
+CLAUDE.md
+.claude/
+
+## Node
+node_modules/
