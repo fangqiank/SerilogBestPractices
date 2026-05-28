@@ -1,390 +1,269 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 950" width="1200" height="950">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" font-family="'Segoe UI', Arial, sans-serif">
   <defs>
-    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0284c7;stop-opacity:1" />
+    <linearGradient id="skyGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#0ea5e9"/>
     </linearGradient>
-    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
+    <linearGradient id="purpleGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a855f7"/>
     </linearGradient>
-    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#f97316;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#ea580c;stop-opacity:1" />
+    <linearGradient id="orangeGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ea580c"/><stop offset="100%" stop-color="#f97316"/>
     </linearGradient>
-    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    <linearGradient id="greenGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#16a34a"/><stop offset="100%" stop-color="#22c55e"/>
     </linearGradient>
-    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+    <linearGradient id="blueGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2563eb"/><stop offset="100%" stop-color="#3b82f6"/>
     </linearGradient>
-    <linearGradient id="tealGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#42b883;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#35495e;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="grayGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#64748b;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#475569;stop-opacity:1" />
+    <linearGradient id="tealGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#35495e"/><stop offset="100%" stop-color="#42b883"/>
     </linearGradient>
 
-    <marker id="arrowSky" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L0,6 L9,3 z" fill="#0ea5e9"/>
+    <marker id="arrowPurple" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="10" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#a855f7"/>
     </marker>
-    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L0,6 L9,3 z" fill="#22c55e"/>
+    <marker id="arrowOrange" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="10" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#f97316"/>
     </marker>
-    <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L0,6 L9,3 z" fill="#f97316"/>
+    <marker id="arrowGreen" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="10" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#22c55e"/>
     </marker>
-    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L0,6 L9,3 z" fill="#a855f7"/>
+    <marker id="arrowBlue" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="10" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#3b82f6"/>
     </marker>
-    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L0,6 L9,3 z" fill="#3b82f6"/>
+    <marker id="arrowTeal" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="10" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#42b883"/>
     </marker>
-    <marker id="arrowTeal" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L0,6 L9,3 z" fill="#42b883"/>
+    <marker id="arrowSky" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="10" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#0ea5e9"/>
     </marker>
+
+    <style>
+      .flow-line-purple { stroke-dasharray: 8,4; animation: dash 0.5s linear infinite; }
+      .flow-line-orange { stroke-dasharray: 8,4; animation: dash 0.5s linear infinite; }
+      .flow-line-green  { stroke-dasharray: 8,4; animation: dash 0.5s linear infinite; }
+      .flow-line-blue   { stroke-dasharray: 8,4; animation: dash 0.5s linear infinite; }
+      .flow-line-teal   { stroke-dasharray: 8,4; animation: dash 0.5s linear infinite; }
+      .flow-line-sky    { stroke-dasharray: 8,4; animation: dash 0.5s linear infinite; }
+      @keyframes dash { to { stroke-dashoffset: -12; } }
+    </style>
   </defs>
 
-  <style>
-    .flow-line-sky { stroke-dasharray: 8, 4; animation: dash-flow-sky 0.5s linear infinite; }
-    .flow-line-green { stroke-dasharray: 8, 4; animation: dash-flow-green 0.5s linear infinite; }
-    .flow-line-orange { stroke-dasharray: 8, 4; animation: dash-flow-orange 0.5s linear infinite; }
-    .flow-line-purple { stroke-dasharray: 8, 4; animation: dash-flow-purple 0.5s linear infinite; }
-    .flow-line-blue { stroke-dasharray: 8, 4; animation: dash-flow-blue 0.5s linear infinite; }
-    .flow-line-teal { stroke-dasharray: 8, 4; animation: dash-flow-teal 0.5s linear infinite; }
-    @keyframes dash-flow-sky { to { stroke-dashoffset: -12; } }
-    @keyframes dash-flow-green { to { stroke-dashoffset: -12; } }
-    @keyframes dash-flow-orange { to { stroke-dashoffset: -12; } }
-    @keyframes dash-flow-purple { to { stroke-dashoffset: -12; } }
-    @keyframes dash-flow-blue { to { stroke-dashoffset: -12; } }
-    @keyframes dash-flow-teal { to { stroke-dashoffset: -12; } }
-  </style>
-
-  <!-- Background -->
-  <rect width="1200" height="950" fill="#ffffff"/>
-  <g opacity="0.12">
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#94a3b8" stroke-width="0.5"/>
-    </pattern>
-    <rect width="1200" height="950" fill="url(#grid)"/>
-  </g>
+  <rect width="1200" height="820" fill="#ffffff"/>
 
   <!-- Title -->
-  <text x="600" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b">Serilog Best Practices / Serilog 最佳实践</text>
+  <text x="600" y="38" text-anchor="middle" font-size="22" font-weight="bold" fill="#1e293b">Serilog 结构化日志最佳实践 - 系统架构图</text>
+  <text x="600" y="58" text-anchor="middle" font-size="13" fill="#64748b">Serilog Structured Logging Best Practices — .NET 10 Console + MediatR CQRS + SQLite</text>
+  <line x1="200" y1="68" x2="1000" y2="68" stroke="#e2e8f0" stroke-width="1"/>
 
-  <!-- ========== LEFT COLUMN: Request Pipeline ========== -->
-
-  <!-- Card 1: HTTP Client -->
-  <g transform="translate(70, 70)">
-    <rect width="280" height="50" rx="12" fill="#f1f5f9" stroke="#0ea5e9" stroke-width="2"/>
-    <rect width="280" height="35" rx="12" fill="url(#skyGradient)"/>
-    <rect y="20" width="280" height="15" fill="url(#skyGradient)"/>
-    <text x="140" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">HTTP Client / HTTP 客户端</text>
-    <text x="140" y="44" text-anchor="middle" font-family="monospace" font-size="10" fill="#0ea5e9">X-Correlation-Id Request/Response Header</text>
+  <!-- ===== Row 1: Entry Point ===== -->
+  <g transform="translate(40, 90)">
+    <rect width="220" height="130" rx="12" fill="#f0f9ff" stroke="#0ea5e9" stroke-width="2"/>
+    <rect width="220" height="32" rx="12" fill="url(#skyGradient)"/>
+    <rect x="0" y="16" width="220" height="16" fill="url(#skyGradient)"/>
+    <text x="110" y="23" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">Program.cs</text>
+    <text x="110" y="50" text-anchor="middle" font-size="11" fill="#334155">IConfiguration (appsettings.json)</text>
+    <text x="110" y="68" text-anchor="middle" font-size="11" fill="#334155">ServiceCollection (DI)</text>
+    <text x="110" y="86" text-anchor="middle" font-size="11" fill="#334155">LogContext.PushProperty</text>
+    <text x="110" y="104" text-anchor="middle" font-size="11" fill="#334155">7 Demo Scenarios</text>
+    <text x="110" y="122" text-anchor="middle" font-size="10" fill="#94a3b8">CorrelationId tracing</text>
   </g>
 
-  <!-- Arrow: HTTP Client → CorrelationIdMW -->
-  <path d="M 210 120 L 210 165" stroke="#e0f2fe" stroke-width="6" fill="none" stroke-linecap="round"/>
-  <path d="M 210 120 L 210 165" class="flow-line-sky" stroke="#0ea5e9" stroke-width="3" fill="none" marker-end="url(#arrowSky)" stroke-linecap="round"/>
+  <!-- Arrow: Program → Serilog Config -->
+  <path d="M260,155 L325,155" stroke="#bae6fd" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M260,155 L325,155" class="flow-line-sky" stroke="#0ea5e9" stroke-width="3" fill="none" marker-end="url(#arrowSky)" stroke-linecap="round"/>
 
-  <!-- Card 2: CorrelationIdMiddleware -->
-  <g transform="translate(70, 165)">
-    <rect width="280" height="100" rx="12" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
-    <rect width="280" height="35" rx="12" fill="url(#greenGradient)"/>
-    <rect y="20" width="280" height="15" fill="url(#greenGradient)"/>
-    <text x="140" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">CorrelationIdMiddleware</text>
-    <g transform="translate(15, 45)">
-      <rect width="250" height="22" rx="4" fill="#ffffff" stroke="#dcfce7" stroke-width="1"/>
-      <text x="125" y="15" text-anchor="middle" font-family="monospace" font-size="10" fill="#22c55e">X-Correlation-Id 请求头支持 (客户端传入)</text>
-    </g>
-    <g transform="translate(15, 72)">
-      <rect width="250" height="22" rx="4" fill="#ffffff" stroke="#dcfce7" stroke-width="1"/>
-      <text x="125" y="15" text-anchor="middle" font-family="monospace" font-size="10" fill="#22c55e">LogContext.PushProperty("CorrelationId")</text>
-    </g>
+  <!-- Serilog Configuration -->
+  <g transform="translate(335, 90)">
+    <rect width="220" height="130" rx="12" fill="#faf5ff" stroke="#a855f7" stroke-width="2"/>
+    <rect width="220" height="32" rx="12" fill="url(#purpleGradient)"/>
+    <rect x="0" y="16" width="220" height="16" fill="url(#purpleGradient)"/>
+    <text x="110" y="23" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">Serilog 配置 / Config</text>
+    <text x="110" y="50" text-anchor="middle" font-size="11" fill="#334155">LoggerConfiguration</text>
+    <text x="110" y="68" text-anchor="middle" font-size="11" fill="#334155">AnsiConsoleTheme.Code</text>
+    <text x="110" y="86" text-anchor="middle" font-size="11" fill="#334155">ReadFrom.Configuration</text>
+    <text x="110" y="104" text-anchor="middle" font-size="11" fill="#334155">Enrich: LogContext / Machine / Thread</text>
+    <text x="110" y="122" text-anchor="middle" font-size="10" fill="#94a3b8">Console (colored) + Seq sink</text>
   </g>
 
-  <!-- Arrow: CorrelationIdMW → SerilogRequestLogging -->
-  <path d="M 210 265 L 210 305" stroke="#dcfce7" stroke-width="6" fill="none" stroke-linecap="round"/>
-  <path d="M 210 265 L 210 305" class="flow-line-green" stroke="#22c55e" stroke-width="3" fill="none" marker-end="url(#arrowGreen)" stroke-linecap="round"/>
+  <!-- Arrow: Program → IMediator -->
+  <path d="M260,195 C310,195 310,280 370,280" stroke="#fed7aa" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M260,195 C310,195 310,280 370,280" class="flow-line-orange" stroke="#f97316" stroke-width="3" fill="none" marker-end="url(#arrowOrange)" stroke-linecap="round"/>
 
-  <!-- Card 3: SerilogRequestLogging -->
-  <g transform="translate(70, 305)">
-    <rect width="280" height="100" rx="12" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
-    <rect width="280" height="35" rx="12" fill="url(#orangeGradient)"/>
-    <rect y="20" width="280" height="15" fill="url(#orangeGradient)"/>
-    <text x="140" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">SerilogRequestLogging</text>
-    <g transform="translate(15, 45)">
-      <rect width="250" height="22" rx="4" fill="#ffffff" stroke="#ffedd5" stroke-width="1"/>
-      <text x="125" y="15" text-anchor="middle" font-family="monospace" font-size="10" fill="#f97316">HTTP {Method} {Path} {Status} {Elapsed}</text>
-    </g>
-    <g transform="translate(15, 72)">
-      <rect width="250" height="22" rx="4" fill="#ffffff" stroke="#ffedd5" stroke-width="1"/>
-      <text x="125" y="15" text-anchor="middle" font-family="monospace" font-size="10" fill="#f97316">EnrichDiagnosticContext: Host, Scheme, IP</text>
-    </g>
+  <!-- ===== Row 2: MediatR Pipeline ===== -->
+  <g transform="translate(380, 248)">
+    <rect width="200" height="65" rx="12" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
+    <rect width="200" height="30" rx="12" fill="url(#orangeGradient)"/>
+    <rect x="0" y="15" width="200" height="15" fill="url(#orangeGradient)"/>
+    <text x="100" y="23" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">IMediator.Send / Publish</text>
+    <text x="100" y="50" text-anchor="middle" font-size="11" fill="#334155">MediatR 14 CQRS + Events</text>
   </g>
 
-  <!-- Arrow: SerilogRequestLogging → OrdersController -->
-  <path d="M 210 405 L 210 445" stroke="#ffedd5" stroke-width="6" fill="none" stroke-linecap="round"/>
-  <path d="M 210 405 L 210 445" class="flow-line-orange" stroke="#f97316" stroke-width="3" fill="none" marker-end="url(#arrowOrange)" stroke-linecap="round"/>
+  <!-- Arrow: IMediator → LoggingBehavior -->
+  <path d="M580,280 L645,280" stroke="#fed7aa" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M580,280 L645,280" class="flow-line-orange" stroke="#f97316" stroke-width="3" fill="none" marker-end="url(#arrowOrange)" stroke-linecap="round"/>
 
-  <!-- Card 4: OrdersController -->
-  <g transform="translate(70, 445)">
-    <rect width="280" height="110" rx="12" fill="#faf5ff" stroke="#a855f7" stroke-width="2"/>
-    <rect width="280" height="35" rx="12" fill="url(#purpleGradient)"/>
-    <rect y="20" width="280" height="15" fill="url(#purpleGradient)"/>
-    <text x="140" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">OrdersController</text>
-    <g transform="translate(15, 45)">
-      <rect width="120" height="22" rx="4" fill="#ffffff" stroke="#f3e8ff" stroke-width="1"/>
-      <text x="60" y="15" text-anchor="middle" font-family="monospace" font-size="10" fill="#a855f7">POST /api/orders</text>
-    </g>
-    <g transform="translate(145, 45)">
-      <rect width="120" height="22" rx="4" fill="#ffffff" stroke="#f3e8ff" stroke-width="1"/>
-      <text x="60" y="15" text-anchor="middle" font-family="monospace" font-size="10" fill="#a855f7">GET /api/orders/{id}</text>
-    </g>
-    <g transform="translate(15, 72)">
-      <rect width="250" height="22" rx="4" fill="#ffffff" stroke="#f3e8ff" stroke-width="1"/>
-      <text x="125" y="15" text-anchor="middle" font-family="monospace" font-size="10" fill="#7c3aed">IMediator.Send → ArgumentException → 400</text>
-    </g>
-  </g>
-
-  <!-- Arrow: OrdersController → LoggingBehavior -->
-  <path d="M 210 555 L 210 590" stroke="#f3e8ff" stroke-width="6" fill="none" stroke-linecap="round"/>
-  <path d="M 210 555 L 210 590" class="flow-line-purple" stroke="#a855f7" stroke-width="3" fill="none" marker-end="url(#arrowPurple)" stroke-linecap="round"/>
-  <text x="230" y="578" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#7c3aed">MediatR</text>
-
-  <!-- Card 5: LoggingBehavior -->
-  <g transform="translate(70, 590)">
-    <rect width="280" height="95" rx="12" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
-    <rect width="280" height="35" rx="12" fill="url(#orangeGradient)"/>
-    <rect y="20" width="280" height="15" fill="url(#orangeGradient)"/>
-    <text x="140" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">LoggingBehavior&lt;,&gt;</text>
-    <g transform="translate(15, 45)">
-      <rect width="120" height="22" rx="4" fill="#ffffff" stroke="#ffedd5" stroke-width="1"/>
-      <text x="60" y="15" text-anchor="middle" font-family="monospace" font-size="10" fill="#f97316">Stopwatch</text>
-    </g>
-    <g transform="translate(145, 45)">
-      <rect width="120" height="22" rx="4" fill="#ffffff" stroke="#ffedd5" stroke-width="1"/>
-      <text x="60" y="15" text-anchor="middle" font-family="monospace" font-size="10" fill="#f97316">try/finally</text>
-    </g>
-    <g transform="translate(15, 72)">
-      <rect width="250" height="22" rx="4" fill="#ffffff" stroke="#ffedd5" stroke-width="1"/>
-      <text x="125" y="15" text-anchor="middle" font-family="monospace" font-size="10" fill="#ea580c">LogContext.PushProperty("Error", ex, destructure)</text>
-    </g>
+  <!-- LoggingBehavior -->
+  <g transform="translate(655, 235)">
+    <rect width="230" height="115" rx="12" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
+    <rect width="230" height="30" rx="12" fill="url(#orangeGradient)"/>
+    <rect x="0" y="15" width="230" height="15" fill="url(#orangeGradient)"/>
+    <text x="115" y="23" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">LoggingBehavior&lt;TReq, TRes&gt;</text>
+    <text x="115" y="50" text-anchor="middle" font-size="11" fill="#334155">Stopwatch timing</text>
+    <text x="115" y="68" text-anchor="middle" font-size="11" fill="#22c55e" font-weight="bold">ArgumentException → Warning</text>
+    <text x="115" y="86" text-anchor="middle" font-size="11" fill="#ef4444" font-weight="bold">Unexpected → Error + StackTrace</text>
+    <text x="115" y="104" text-anchor="middle" font-size="10" fill="#94a3b8">Pipeline Behavior (cross-cutting)</text>
   </g>
 
   <!-- Arrow: LoggingBehavior → Handlers -->
-  <path d="M 210 685 L 210 725" stroke="#ffedd5" stroke-width="6" fill="none" stroke-linecap="round"/>
-  <path d="M 210 685 L 210 725" class="flow-line-orange" stroke="#f97316" stroke-width="3" fill="none" marker-end="url(#arrowOrange)" stroke-linecap="round"/>
+  <path d="M885,292 C940,292 940,370 960,370" stroke="#bbf7d0" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M885,292 C940,292 940,370 960,370" class="flow-line-green" stroke="#22c55e" stroke-width="3" fill="none" marker-end="url(#arrowGreen)" stroke-linecap="round"/>
 
-  <!-- Card 6: CQRS Handlers -->
-  <g transform="translate(70, 725)">
-    <rect width="280" height="70" rx="12" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
-    <rect width="280" height="35" rx="12" fill="url(#greenGradient)"/>
-    <rect y="20" width="280" height="15" fill="url(#greenGradient)"/>
-    <text x="140" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">CQRS Handlers</text>
-    <g transform="translate(15, 42)">
-      <rect width="120" height="22" rx="4" fill="#ffffff" stroke="#dcfce7" stroke-width="1"/>
-      <text x="60" y="15" text-anchor="middle" font-family="monospace" font-size="10" fill="#22c55e">CreateOrderHandler</text>
-    </g>
-    <g transform="translate(145, 42)">
-      <rect width="120" height="22" rx="4" fill="#ffffff" stroke="#dcfce7" stroke-width="1"/>
-      <text x="60" y="15" text-anchor="middle" font-family="monospace" font-size="10" fill="#22c55e">GetOrderHandler</text>
-    </g>
+  <!-- ===== Row 3: CQRS Handlers ===== -->
+  <g transform="translate(40, 370)">
+    <rect width="280" height="175" rx="12" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+    <rect width="280" height="32" rx="12" fill="url(#greenGradient)"/>
+    <rect x="0" y="16" width="280" height="16" fill="url(#greenGradient)"/>
+    <text x="140" y="23" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">CQRS Command Handlers</text>
+    <text x="140" y="50" text-anchor="middle" font-size="11" fill="#334155">CreateOrderHandler</text>
+    <text x="140" y="68" text-anchor="middle" font-size="11" fill="#334155">PayOrderHandler</text>
+    <text x="140" y="86" text-anchor="middle" font-size="11" fill="#334155">ShipOrderHandler</text>
+    <line x1="20" y1="96" x2="260" y2="96" stroke="#dcfce7" stroke-width="1"/>
+    <text x="140" y="114" text-anchor="middle" font-size="10" fill="#16a34a">Business validation (ArgumentException)</text>
+    <text x="140" y="132" text-anchor="middle" font-size="10" fill="#16a34a">Repository CRUD + Domain Events</text>
+    <text x="140" y="150" text-anchor="middle" font-size="10" fill="#16a34a">Structured logging {OrderId} {Amount}</text>
+    <text x="140" y="168" text-anchor="middle" font-size="10" fill="#94a3b8">IRequestHandler&lt;TCommand, TResult&gt;</text>
   </g>
 
-  <!-- ========== SERILOG LOGGING BUS (vertical) ========== -->
-
-  <!-- Bus background -->
-  <path d="M 420 215 L 420 760" stroke="#dbeafe" stroke-width="10" fill="none" stroke-linecap="round"/>
-  <!-- Bus animated line -->
-  <path d="M 420 215 L 420 760" class="flow-line-blue" stroke="#3b82f6" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <!-- Bus label (rotated) -->
-  <text x="405" y="490" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3b82f6" transform="rotate(-90, 405, 490)">Serilog LogContext</text>
-
-  <!-- Connection stubs from pipeline to bus -->
-  <!-- CorrelationIdMW → bus -->
-  <path d="M 350 215 L 415 215" stroke="#dcfce7" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <path d="M 350 215 L 415 215" class="flow-line-blue" stroke="#3b82f6" stroke-width="2" fill="none" marker-end="url(#arrowBlue)" stroke-linecap="round"/>
-  <circle cx="420" cy="215" r="5" fill="#3b82f6"/>
-  <text x="385" y="208" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6">CorrelationId</text>
-
-  <!-- SerilogRequestLogging → bus -->
-  <path d="M 350 355 L 415 355" stroke="#ffedd5" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <path d="M 350 355 L 415 355" class="flow-line-blue" stroke="#3b82f6" stroke-width="2" fill="none" marker-end="url(#arrowBlue)" stroke-linecap="round"/>
-  <circle cx="420" cy="355" r="5" fill="#3b82f6"/>
-  <text x="385" y="348" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6">HTTP Log</text>
-
-  <!-- LoggingBehavior → bus -->
-  <path d="M 350 637 L 415 637" stroke="#ffedd5" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <path d="M 350 637 L 415 637" class="flow-line-blue" stroke="#3b82f6" stroke-width="2" fill="none" marker-end="url(#arrowBlue)" stroke-linecap="round"/>
-  <circle cx="420" cy="637" r="5" fill="#3b82f6"/>
-  <text x="385" y="630" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6">Timing</text>
-
-  <!-- Handlers → bus -->
-  <path d="M 350 760 L 415 760" stroke="#dcfce7" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <path d="M 350 760 L 415 760" class="flow-line-blue" stroke="#3b82f6" stroke-width="2" fill="none" marker-end="url(#arrowBlue)" stroke-linecap="round"/>
-  <circle cx="420" cy="760" r="5" fill="#3b82f6"/>
-  <text x="385" y="753" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6">ILogger&lt;T&gt;</text>
-
-  <!-- Main arrow: bus → Serilog card -->
-  <path d="M 425 360 L 580 360" stroke="#dbeafe" stroke-width="6" fill="none" stroke-linecap="round"/>
-  <path d="M 425 360 L 580 360" class="flow-line-blue" stroke="#3b82f6" stroke-width="3" fill="none" marker-end="url(#arrowBlue)" stroke-linecap="round"/>
-  <text x="503" y="352" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3b82f6">Structured Logs</text>
-
-  <!-- ========== RIGHT COLUMN: Logging Infrastructure ========== -->
-
-  <!-- Card 7: Serilog Core -->
-  <g transform="translate(580, 300)">
-    <rect width="260" height="120" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
-    <rect width="260" height="35" rx="12" fill="url(#blueGradient)"/>
-    <rect y="20" width="260" height="15" fill="url(#blueGradient)"/>
-    <text x="130" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Serilog Core</text>
-    <g transform="translate(15, 45)">
-      <rect width="230" height="18" rx="4" fill="#ffffff" stroke="#dbeafe" stroke-width="1"/>
-      <text x="115" y="13" text-anchor="middle" font-family="monospace" font-size="10" fill="#3b82f6">Enrich: FromLogContext</text>
-    </g>
-    <g transform="translate(15, 67)">
-      <rect width="230" height="18" rx="4" fill="#ffffff" stroke="#dbeafe" stroke-width="1"/>
-      <text x="115" y="13" text-anchor="middle" font-family="monospace" font-size="10" fill="#3b82f6">Enrich: WithMachineName, WithThreadId</text>
-    </g>
-    <g transform="translate(15, 89)">
-      <rect width="230" height="18" rx="4" fill="#ffffff" stroke="#dbeafe" stroke-width="1"/>
-      <text x="115" y="13" text-anchor="middle" font-family="monospace" font-size="10" fill="#2563eb">Message Templates: {CustomerName}, {OrderId}</text>
-    </g>
+  <g transform="translate(340, 370)">
+    <rect width="230" height="120" rx="12" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+    <rect width="230" height="32" rx="12" fill="url(#greenGradient)"/>
+    <rect x="0" y="16" width="230" height="16" fill="url(#greenGradient)"/>
+    <text x="115" y="23" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">Query Handlers</text>
+    <text x="115" y="50" text-anchor="middle" font-size="11" fill="#334155">GetOrderHandler</text>
+    <line x1="20" y1="62" x2="210" y2="62" stroke="#dcfce7" stroke-width="1"/>
+    <text x="115" y="80" text-anchor="middle" font-size="10" fill="#16a34a">Returns Order? (nullable)</text>
+    <text x="115" y="98" text-anchor="middle" font-size="10" fill="#16a34a">Structured logging {OrderId}</text>
+    <text x="115" y="116" text-anchor="middle" font-size="10" fill="#94a3b8">IRequestHandler&lt;TQuery, TResult?&gt;</text>
   </g>
 
-  <!-- Card 8: appsettings.json -->
-  <g transform="translate(900, 300)">
-    <rect width="250" height="120" rx="12" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
-    <rect width="250" height="35" rx="12" fill="url(#grayGradient)"/>
-    <rect y="20" width="250" height="15" fill="url(#grayGradient)"/>
-    <text x="125" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">appsettings.json</text>
-    <g transform="translate(15, 45)">
-      <rect width="220" height="18" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
-      <text x="110" y="13" text-anchor="middle" font-family="monospace" font-size="10" fill="#22c55e">Development: Debug + Seq + Console</text>
-    </g>
-    <g transform="translate(15, 67)">
-      <rect width="220" height="18" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
-      <text x="110" y="13" text-anchor="middle" font-family="monospace" font-size="10" fill="#f97316">Production: Warning + Console</text>
-    </g>
-    <g transform="translate(15, 89)">
-      <rect width="220" height="18" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
-      <text x="110" y="13" text-anchor="middle" font-family="monospace" font-size="10" fill="#64748b">Enrich 节环境自包含，零代码冗余</text>
-    </g>
+  <!-- Arrow: Handlers → Repository -->
+  <path d="M320,520 C320,560 230,560 230,575" stroke="#bfdbfe" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M320,520 C320,560 230,560 230,575" class="flow-line-blue" stroke="#3b82f6" stroke-width="3" fill="none" marker-end="url(#arrowBlue)" stroke-linecap="round"/>
+
+  <!-- Arrow: Handlers → Events -->
+  <path d="M570,440 L700,440" stroke="#dcfce7" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M570,440 L700,440" class="flow-line-green" stroke="#22c55e" stroke-width="3" fill="none" marker-end="url(#arrowGreen)" stroke-linecap="round"/>
+
+  <!-- ===== Row 4: Data Layer ===== -->
+  <g transform="translate(40, 580)">
+    <rect width="380" height="100" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+    <rect width="380" height="32" rx="12" fill="url(#blueGradient)"/>
+    <rect x="0" y="16" width="380" height="16" fill="url(#blueGradient)"/>
+    <text x="190" y="23" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">IOrderRepository + OrderRepository (Dapper)</text>
+    <text x="190" y="50" text-anchor="middle" font-size="11" fill="#334155">CreateAsync(Order) → Order</text>
+    <text x="190" y="68" text-anchor="middle" font-size="11" fill="#334155">GetByIdAsync(Guid) → Order?</text>
+    <text x="190" y="86" text-anchor="middle" font-size="11" fill="#334155">UpdateStatusAsync(Guid, status) → Order</text>
   </g>
 
-  <!-- Arrow: appsettings → Serilog -->
-  <path d="M 900 360 L 840 360" stroke="#e2e8f0" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <path d="M 900 360 L 840 360" class="flow-line-blue" stroke="#3b82f6" stroke-width="2" fill="none" marker-end="url(#arrowBlue)" stroke-linecap="round"/>
-  <text x="870" y="352" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#64748b">Config</text>
+  <!-- Arrow: Repository → SQLite -->
+  <path d="M230,680 L230,710" stroke="#bfdbfe" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M230,680 L230,710" class="flow-line-blue" stroke="#3b82f6" stroke-width="3" fill="none" marker-end="url(#arrowBlue)" stroke-linecap="round"/>
 
-  <!-- Arrow: Serilog → Console -->
-  <path d="M 660 420 L 660 470" stroke="#d1fae5" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <path d="M 660 420 L 660 470" class="flow-line-teal" stroke="#42b883" stroke-width="2" fill="none" marker-end="url(#arrowTeal)" stroke-linecap="round"/>
-
-  <!-- Arrow: Serilog → Seq -->
-  <path d="M 790 420 L 790 470" stroke="#d1fae5" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <path d="M 790 420 L 790 470" class="flow-line-teal" stroke="#42b883" stroke-width="2" fill="none" marker-end="url(#arrowTeal)" stroke-linecap="round"/>
-
-  <!-- Card 9: Console Sink -->
-  <g transform="translate(595, 470)">
-    <rect width="130" height="50" rx="10" fill="#f0fdf4" stroke="#42b883" stroke-width="2"/>
-    <rect width="130" height="28" rx="10" fill="url(#tealGradient)"/>
-    <rect y="16" width="130" height="12" fill="url(#tealGradient)"/>
-    <text x="65" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Console Sink</text>
-    <text x="65" y="42" text-anchor="middle" font-family="monospace" font-size="9" fill="#42b883">outputTemplate</text>
+  <g transform="translate(130, 715)">
+    <rect width="200" height="45" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="100" y="20" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">SQLite (WAL mode)</text>
+    <text x="100" y="36" text-anchor="middle" font-size="10" fill="#3b82f6">serilogdemo.db — Orders table</text>
   </g>
 
-  <!-- Card 10: Seq Sink -->
-  <g transform="translate(740, 470)">
-    <rect width="130" height="50" rx="10" fill="#f0fdf4" stroke="#42b883" stroke-width="2"/>
-    <rect width="130" height="28" rx="10" fill="url(#tealGradient)"/>
-    <rect y="16" width="130" height="12" fill="url(#tealGradient)"/>
-    <text x="65" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Seq Sink</text>
-    <text x="65" y="42" text-anchor="middle" font-family="monospace" font-size="9" fill="#42b883">localhost:5341</text>
+  <!-- ===== Domain Events ===== -->
+  <g transform="translate(710, 370)">
+    <rect width="440" height="310" rx="12" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+    <rect width="440" height="30" rx="12" fill="url(#greenGradient)"/>
+    <rect x="0" y="15" width="440" height="15" fill="url(#greenGradient)"/>
+    <text x="220" y="23" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">Domain Events (INotification Pub-Sub)</text>
+
+    <rect x="15" y="42" width="200" height="120" rx="8" fill="#ffffff" stroke="#86efac" stroke-width="1.5"/>
+    <text x="115" y="60" text-anchor="middle" font-size="11" font-weight="bold" fill="#16a34a">OrderCreatedEvent</text>
+    <text x="115" y="78" text-anchor="middle" font-size="10" fill="#334155">OrderCreatedEmailHandler</text>
+    <text x="115" y="93" text-anchor="middle" font-size="9" fill="#94a3b8">send confirmation email</text>
+    <text x="115" y="112" text-anchor="middle" font-size="10" fill="#334155">OrderCreatedLogHandler</text>
+    <text x="115" y="127" text-anchor="middle" font-size="9" fill="#94a3b8">write audit log</text>
+    <text x="115" y="152" text-anchor="middle" font-size="9" fill="#64748b">handler: {OrderId} {CustomerName}</text>
+
+    <rect x="225" y="42" width="200" height="120" rx="8" fill="#ffffff" stroke="#86efac" stroke-width="1.5"/>
+    <text x="325" y="60" text-anchor="middle" font-size="11" font-weight="bold" fill="#16a34a">OrderPaidEvent</text>
+    <text x="325" y="78" text-anchor="middle" font-size="10" fill="#334155">OrderPaidInventoryHandler</text>
+    <text x="325" y="93" text-anchor="middle" font-size="9" fill="#94a3b8">update inventory stock</text>
+    <text x="325" y="112" text-anchor="middle" font-size="10" fill="#334155">OrderPaidReceiptHandler</text>
+    <text x="325" y="127" text-anchor="middle" font-size="9" fill="#94a3b8">generate receipt RCP-xxx</text>
+    <text x="325" y="152" text-anchor="middle" font-size="9" fill="#64748b">handler: {OrderId} {Amount}</text>
+
+    <rect x="120" y="175" width="200" height="120" rx="8" fill="#ffffff" stroke="#86efac" stroke-width="1.5"/>
+    <text x="220" y="193" text-anchor="middle" font-size="11" font-weight="bold" fill="#16a34a">OrderShippedEvent</text>
+    <text x="220" y="211" text-anchor="middle" font-size="10" fill="#334155">OrderShippedNotificationHandler</text>
+    <text x="220" y="226" text-anchor="middle" font-size="9" fill="#94a3b8">send shipping notification</text>
+    <text x="220" y="245" text-anchor="middle" font-size="10" fill="#334155">OrderShippedTrackingHandler</text>
+    <text x="220" y="260" text-anchor="middle" font-size="9" fill="#94a3b8">generate tracking TRK-xxx</text>
+    <text x="220" y="285" text-anchor="middle" font-size="9" fill="#64748b">handler: {OrderId} {ShippingAddress}</text>
   </g>
 
-  <!-- ========== DATA MODEL ========== -->
-  <g transform="translate(900, 470)">
-    <rect width="250" height="200" rx="12" fill="#faf5ff" stroke="#a855f7" stroke-width="2"/>
-    <rect width="250" height="35" rx="12" fill="url(#purpleGradient)"/>
-    <rect y="20" width="250" height="15" fill="url(#purpleGradient)"/>
-    <text x="125" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">Order Model / 数据模型</text>
-    <g transform="translate(15, 45)">
-      <rect width="220" height="18" rx="4" fill="#ffffff" stroke="#f3e8ff" stroke-width="1"/>
-      <text x="110" y="13" text-anchor="middle" font-family="monospace" font-size="10" fill="#a855f7">Guid Id</text>
-    </g>
-    <g transform="translate(15, 67)">
-      <rect width="220" height="18" rx="4" fill="#ffffff" stroke="#f3e8ff" stroke-width="1"/>
-      <text x="110" y="13" text-anchor="middle" font-family="monospace" font-size="10" fill="#a855f7">string CustomerName</text>
-    </g>
-    <g transform="translate(15, 89)">
-      <rect width="220" height="18" rx="4" fill="#ffffff" stroke="#f3e8ff" stroke-width="1"/>
-      <text x="110" y="13" text-anchor="middle" font-family="monospace" font-size="10" fill="#a855f7">decimal Amount</text>
-    </g>
-    <g transform="translate(15, 111)">
-      <rect width="220" height="18" rx="4" fill="#ffffff" stroke="#f3e8ff" stroke-width="1"/>
-      <text x="110" y="13" text-anchor="middle" font-family="monospace" font-size="10" fill="#7c3aed">DateTimeOffset CreatedAt</text>
-    </g>
-    <g transform="translate(15, 140)">
-      <text x="0" y="12" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#64748b">CreateOrderRequest:</text>
-      <text x="0" y="28" font-family="monospace" font-size="10" fill="#94a3b8">string CustomerName, decimal Amount</text>
-    </g>
+  <!-- Arrow: Serilog Config → LoggingBehavior -->
+  <path d="M555,220 C600,220 640,240 655,255" stroke="#e9d5ff" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M555,220 C600,220 640,240 655,255" class="flow-line-purple" stroke="#a855f7" stroke-width="3" fill="none" marker-end="url(#arrowPurple)" stroke-linecap="round"/>
+  <text x="595" y="228" text-anchor="middle" font-size="9" fill="#7c3aed">ILogger&lt;T&gt;</text>
+
+  <!-- ===== Serilog Sinks ===== -->
+  <g transform="translate(960, 90)">
+    <rect width="200" height="130" rx="12" fill="#f0fdf4" stroke="#42b883" stroke-width="2"/>
+    <rect width="200" height="32" rx="12" fill="url(#tealGradient)"/>
+    <rect x="0" y="16" width="200" height="16" fill="url(#tealGradient)"/>
+    <text x="100" y="23" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">Serilog Output Sinks</text>
+    <text x="100" y="52" text-anchor="middle" font-size="11" fill="#334155">Console (AnsiConsoleTheme)</text>
+    <text x="100" y="68" text-anchor="middle" font-size="9" fill="#94a3b8">colored, no Properties noise</text>
+    <text x="100" y="88" text-anchor="middle" font-size="11" fill="#334155">Seq (Dev only)</text>
+    <text x="100" y="104" text-anchor="middle" font-size="9" fill="#94a3b8">structured JSON + search</text>
+    <text x="100" y="122" text-anchor="middle" font-size="10" fill="#64748b">Message templates only</text>
   </g>
 
-  <!-- ========== LEGEND ========== -->
-  <g transform="translate(580, 540)">
-    <rect width="290" height="68" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
-    <text x="145" y="16" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#64748b">LEGEND / 图例</text>
-    <rect x="12" y="25" width="20" height="10" rx="3" fill="#0ea5e9"/>
-    <text x="37" y="34" font-family="Arial" font-size="9" fill="#1e293b">Client</text>
-    <rect x="82" y="25" width="20" height="10" rx="3" fill="#22c55e"/>
-    <text x="107" y="34" font-family="Arial" font-size="9" fill="#1e293b">Middleware</text>
-    <rect x="175" y="25" width="20" height="10" rx="3" fill="#f97316"/>
-    <text x="200" y="34" font-family="Arial" font-size="9" fill="#1e293b">Logging</text>
-    <rect x="250" y="25" width="20" height="10" rx="3" fill="#a855f7"/>
-    <text x="275" y="34" font-family="Arial" font-size="9" fill="#1e293b">API</text>
-    <rect x="12" y="44" width="20" height="10" rx="3" fill="#3b82f6"/>
-    <text x="37" y="53" font-family="Arial" font-size="9" fill="#1e293b">Serilog</text>
-    <rect x="92" y="44" width="20" height="10" rx="3" fill="#42b883"/>
-    <text x="117" y="53" font-family="Arial" font-size="9" fill="#1e293b">Sinks</text>
-    <rect x="162" y="44" width="20" height="10" rx="3" fill="#64748b"/>
-    <text x="187" y="53" font-family="Arial" font-size="9" fill="#1e293b">Config</text>
+  <!-- Arrow: Serilog Config → Sinks -->
+  <path d="M555,155 L950,155" stroke="#ccfbf1" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M555,155 L950,155" class="flow-line-teal" stroke="#42b883" stroke-width="3" fill="none" marker-end="url(#arrowTeal)" stroke-linecap="round"/>
+
+  <!-- ===== Models ===== -->
+  <g transform="translate(440, 580)">
+    <rect width="250" height="100" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect width="250" height="30" rx="12" fill="#64748b"/>
+    <rect x="0" y="15" width="250" height="15" fill="#64748b"/>
+    <text x="125" y="23" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">Models / Domain</text>
+    <text x="125" y="50" text-anchor="middle" font-size="11" fill="#334155">Order { Id, CustomerName, Amount, Status }</text>
+    <text x="125" y="68" text-anchor="middle" font-size="11" fill="#334155">OrderStatus { Created, Paid, Shipped }</text>
+    <text x="125" y="86" text-anchor="middle" font-size="10" fill="#94a3b8">CreateOrderRequest (DTO)</text>
   </g>
 
-  <!-- ========== BEST PRACTICES ========== -->
-  <g transform="translate(70, 830)">
-    <rect width="1100" height="100" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
-    <text x="550" y="22" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#1e293b">Best Practices / 最佳实践</text>
-    <g transform="translate(30, 38)">
-      <circle cx="6" cy="6" r="5" fill="#64748b"/>
-      <text x="20" y="10" font-family="Arial" font-size="10" fill="#1e293b">1. appsettings.json 配置 Serilog — 环境分级，Enrich 节自包含，零代码冗余</text>
-    </g>
-    <g transform="translate(30, 56)">
-      <circle cx="6" cy="6" r="5" fill="#0ea5e9"/>
-      <text x="20" y="10" font-family="Arial" font-size="10" fill="#1e293b">2. CorrelationId 全链路追踪 — 支持客户端 X-Correlation-Id 请求头传入</text>
-    </g>
-    <g transform="translate(30, 74)">
-      <circle cx="6" cy="6" r="5" fill="#f97316"/>
-      <text x="20" y="10" font-family="Arial" font-size="10" fill="#1e293b">3. MediatR LoggingBehavior — try/finally + Stopwatch 自动记录，ArgumentException → 400</text>
-    </g>
-    <g transform="translate(580, 38)">
-      <circle cx="6" cy="6" r="5" fill="#3b82f6"/>
-      <text x="20" y="10" font-family="Arial" font-size="10" fill="#1e293b">4. SerilogRequestLogging — EnrichDiagnosticContext 注入请求上下文</text>
-    </g>
-    <g transform="translate(580, 56)">
-      <circle cx="6" cy="6" r="5" fill="#a855f7"/>
-      <text x="20" y="10" font-family="Arial" font-size="10" fill="#1e293b">5. 结构化日志模板 — {CustomerName} 命名占位符，DateTimeOffset 时区安全</text>
-    </g>
-    <g transform="translate(580, 74)">
-      <circle cx="6" cy="6" r="5" fill="#22c55e"/>
-      <text x="20" y="10" font-family="Arial" font-size="10" fill="#1e293b">6. LogContext PushProperty — CorrelationId、Error (destructured) 全请求可用</text>
-    </g>
+  <!-- ===== Legend ===== -->
+  <g transform="translate(440, 700)">
+    <rect width="710" height="45" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="15" y="28" font-size="11" font-weight="bold" fill="#475569">Legend:</text>
+    <rect x="70" y="16" width="14" height="14" rx="3" fill="#0ea5e9"/>
+    <text x="90" y="28" font-size="10" fill="#475569">Entry / Config</text>
+    <rect x="170" y="16" width="14" height="14" rx="3" fill="#a855f7"/>
+    <text x="190" y="28" font-size="10" fill="#475569">Serilog</text>
+    <rect x="245" y="16" width="14" height="14" rx="3" fill="#f97316"/>
+    <text x="265" y="28" font-size="10" fill="#475569">MediatR Pipeline</text>
+    <rect x="365" y="16" width="14" height="14" rx="3" fill="#22c55e"/>
+    <text x="385" y="28" font-size="10" fill="#475569">CQRS / Events</text>
+    <rect x="475" y="16" width="14" height="14" rx="3" fill="#3b82f6"/>
+    <text x="495" y="28" font-size="10" fill="#475569">Data / SQLite</text>
+    <rect x="580" y="16" width="14" height="14" rx="3" fill="#42b883"/>
+    <text x="600" y="28" font-size="10" fill="#475569">Output Sinks</text>
+    <line x1="660" y1="23" x2="690" y2="23" stroke="#f97316" stroke-width="2" stroke-dasharray="6,3"/>
+    <text x="695" y="28" font-size="10" fill="#475569">Flow</text>
   </g>
 
+  <!-- ===== Best Practices ===== -->
+  <g transform="translate(40, 775)">
+    <text x="0" y="12" font-size="10" fill="#94a3b8">Best Practices: #1 appsettings.json config | #2 CorrelationId tracing | #3 Structured message templates {NamedPlaceholders} | #4 Environment-based level | #5 Enrichers (MachineName/ThreadId) | #6 Pipeline Behavior | #7 Exception grading (Warning/Error) | #8 Domain Events pub-sub</text>
+  </g>
 </svg>

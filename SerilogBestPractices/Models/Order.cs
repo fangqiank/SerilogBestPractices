@@ -6,6 +6,7 @@ namespace SerilogBestPractices.Models
         public string CustomerName { get; set; } = string.Empty;
         public decimal Amount { get; set; }
         public DateTimeOffset CreatedAt { get; set; }
+        public string Status { get; internal set; } = OrderStatus.Created;
     }
 
     public class CreateOrderRequest

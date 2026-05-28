@@ -32,8 +32,20 @@ namespace SerilogBestPractices.Behaviors
 
                 return response;
             }
+            catch (ArgumentException ex)
+            {
+                // 业务验证异常：Warning 级别，仅记录消息，不打印堆栈
+                logger.LogWarning(
+                    "Validation failed for {RequestName} after {ElapsedMilliseconds} ms: {ErrorMessage}",
+                    requestName,
+                    stopwatch.ElapsedMilliseconds,
+                    ex.Message);
+
+                throw;
+            }
             catch (Exception ex)
             {
+                // 非预期异常：Error 级别，记录完整异常信息
                 using (LogContext.PushProperty("Error", ex, destructureObjects: true))
                 {
                     logger.LogError(
