@@ -34,9 +34,9 @@ Program.cs (Demo Scenarios + LogContext CorrelationId)
             ├─→ IOrderRepository (Dapper) ──→ SQLite (WAL mode)
             │
             └─→ mediator.Publish(DomainEvent) ──→ INotificationHandlers
-                   OrderCreatedEvent → EmailHandler + LogHandler
+                   OrderCreatedEvent → EmailHandler (via IEmailService) + LogHandler
                    OrderPaidEvent   → InventoryHandler + ReceiptHandler
-                   OrderShippedEvent→ NotificationHandler + TrackingHandler
+                   OrderShippedEvent→ NotificationHandler (best-effort) + TrackingHandler
 ```
 
 ### Module Table
@@ -51,6 +51,8 @@ Program.cs (Demo Scenarios + LogContext CorrelationId)
 | GetOrderHandler | `Features/Orders/GetOrder.cs` | 查询订单 Query Handler |
 | OrderRepository | `Data/OrderRepository.cs` | Dapper + SQLite 实现，CreateAsync/GetByIdAsync/UpdateStatusAsync |
 | Domain Events | `Events/*.cs` | 3 个事件 x 2 个 Handler，演示 Pub-Sub 解耦 |
+| IEmailService | `Services/IEmailService.cs` | 邮件服务接口抽象，Handler 注入接口而非直接模拟 |
+| FakeEmailService | `Services/FakeEmailService.cs` | Demo 空实现（日志 + Task.Delay），替代真实邮件服务 |
 | Order / OrderStatus | `Models/Order.cs`, `Models/OrderStatus.cs` | 领域模型 + 状态常量 (Created/Paid/Shipped) |
 
 ## Quick Start
@@ -83,12 +85,12 @@ dotnet build SerilogBestPractices/SerilogBestPractices.csproj
 
 | 场景 | 操作 | 日志要点 |
 |------|------|---------|
-| 1 | 创建有效订单 | Information 日志 + OrderCreatedEvent 触发 2 个 Handler |
+| 1 | 创建有效订单 | Information 日志 + OrderCreatedEvent 触发 2 个 Handler（IEmailService 发送确认邮件） |
 | 2 | 无效金额（负数） | ArgumentException → LoggingBehavior Warning 级别 |
 | 3 | 重复客户检测 | ArgumentException → Warning 级别 |
 | 4 | 查询不存在订单 | 返回 null，仅记录查询日志 |
 | 5 | 创建 + 支付 | PayOrderCommand + OrderPaidEvent 触发 2 个 Handler |
-| 6 | 创建 + 支付 + 发货 | 完整三步流程 + OrderShippedEvent |
+| 6 | 创建 + 支付 + 发货 | 完整三步流程 + OrderShippedEvent（含 NotificationHandler 瞬态故障演示） |
 | 7 | 完整生命周期（同 CorrelationId） | 同一 CorrelationId 贯穿 Create → Pay → Ship |
 
 ## Best Practices Summary

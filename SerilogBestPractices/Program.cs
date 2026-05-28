@@ -2,17 +2,16 @@ using MediatR;
 using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Context;
-using Serilog.Sinks.SystemConsole.Themes;
 using Serilog.Settings.Configuration;
+using Serilog.Sinks.SystemConsole.Themes;
 using SerilogBestPractices.Behaviors;
 using SerilogBestPractices.Data;
 using SerilogBestPractices.Features.Orders;
+using SerilogBestPractices.Services;
 
 // ===== 最佳实践 #1：使用 appsettings.json 配置 Serilog =====
-// 手动构建 IConfiguration（无 ASP.NET Core Host），按环境加载配置文件
 var environment = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT") ?? "Development";
 
 var configuration = new ConfigurationBuilder()
@@ -57,6 +56,7 @@ DbInitializer.Initialize(dbConnection);
 services.AddSingleton<IDisposable>(dbConnection);
 services.AddSingleton(dbConnection);
 services.AddSingleton<IOrderRepository, OrderRepository>();
+services.AddSingleton<IEmailService, FakeEmailService>();
 
 var serviceProvider = services.BuildServiceProvider();
 var mediator = serviceProvider.GetRequiredService<IMediator>();
